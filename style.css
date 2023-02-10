@@ -88,6 +88,9 @@ h1 {
 .form-container {
     width: 100%;
     height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     background-color: #ededed;
 }
@@ -259,6 +262,10 @@ button:hover, button:active {
 }
 
 @media only screen and (min-width: 700px) {
+
+    body, html {
+        font-size: clamp(0.8rem, 0.3rem + 4vw, 1.5rem);
+    }
     .container {
         display: flex;
         flex-direction: row;
@@ -290,9 +297,29 @@ button:hover, button:active {
 
     button {
         margin-top: 1.5rem;
+        font-size: 1.2rem;
     }
 
-    p {
+    form p {
         margin-top: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    form p + p {
+        margin-bottom: 0.6rem;
+    }
+
+    form {
+        margin-top: clamp(1rem, 1.5rem, 3rem);
+        margin-bottom: clamp(1rem, 1.5rem, 3rem);
+    }
+
+    .form-ul {
+        gap: clamp(20px, 25px, 40px);
+    }
+
+    li {
+        gap: clamp(5px, 10px, 15px);
+        width: clamp(20%, 40%, 45%);
     }
 }
