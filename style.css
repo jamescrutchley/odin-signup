@@ -1,0 +1,298 @@
+@keyframes silo-fade {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-1.4em);
+        -moz-transform: translateY(-1.4em);
+        -ms-transform: translateY(-1.4em);
+        -o-transform: translateY(-1.4em);
+        transform: translateY(-1.4em);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+html,body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(0.7rem, 0.3rem + 3.3vw, 1.3rem);
+
+    background-color: #ededed;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    background: url(book.jpg) rgb(56, 61, 66);
+    background-size: cover;
+}
+
+.hero-title-bar {
+    background-color: rgba(0, 0, 0, 0.406);
+    position: relative;
+    width: 100%;
+    height: 20%;
+    top: 25%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-title-bar p {
+    color: #ededed;
+    text-align: center;
+
+    font-style: italic;
+}
+
+.cta:hover, .cta:active {
+    font-size: 1.4rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.cta p::after {
+    content: ' \2193';
+    display: inline;
+    white-space: nowrap;
+}
+
+h1 {
+    color: #ededed;
+    padding-right: 5px;
+    width: 100%;
+    position: sticky;
+
+    box-shadow: 10px 3px #ededed ;
+}
+
+.form-container {
+    width: 100%;
+    height: fit-content;
+
+    background-color: #ededed;
+}
+
+form {
+    margin: 1rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+form p, form h2 {
+    text-align: center;
+}
+
+form p {
+    font-size: 0.9rem;
+}
+
+form p + p {
+  padding-bottom: 2rem;
+  border-bottom: double 0.2rem black;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 2.5rem 0rem 0rem 0rem;
+
+    color: #454372;
+}
+
+.form-ul {
+    padding: 0rem 0.5rem 0.5rem 0.5rem;
+    gap: 10px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+
+
+li {
+    width: 40%;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label {
+    width: fit-content;
+
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    color: slategray;
+
+    margin-top: 1rem;
+}
+
+input {
+    width: 100%;
+}
+
+input::placeholder {
+    color: rgba(128, 128, 128, 0.557);
+}
+  
+  input:focus:invalid {
+    background-color: white;
+    border: rgba(255, 0, 0, 0.5) 2px solid;
+  }
+   
+  input:invalid:not(:focus) {
+    background-color: rgba(255, 0, 0, 0.5);
+    border: rgba(255, 0, 0, 0.5) 2px solid;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  
+  input:not(:focus):placeholder-shown {
+    border: grey 2px solid;
+    background-color: white;
+  }
+  
+  input:focus:placeholder-shown, input:focus-visible:placeholder-shown {
+    background-color: white;
+    border: rgba(255, 0, 0, 0.5) 2px solid; 
+  }
+  
+  input:focus:placeholder-shown::placeholder {
+    color: transparent;
+  }
+
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+  }
+
+.pwd-requirements {
+    font-size: 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+}
+
+.pwd-requirements ul li {
+    list-style: circle;
+    display: list-item;
+
+    margin-left: 0.8rem;
+}
+
+.pwd-list-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.pwd-list-item div {
+    width: 100%;
+}
+
+.pwd-list-item div ul {
+    margin: 0;
+    padding-left: 3px;
+}
+
+.pwd-list-item div ul li {
+    width: 100%;
+    text-align: left;
+}
+
+.pwd-list-item div ul li.ticked {
+    color: green;
+}
+
+.pwd-feedback {
+    margin: 0;
+    padding: 0;
+    font-size: 0.5rem;
+    color: red;
+    text-align: left;
+}
+
+
+
+
+
+button {
+    margin-top: 2rem;
+
+    padding: 1rem;
+    border: #454372 2px solid;
+
+    color: #454372;
+    font-size: 1.3rem;
+    font-weight: 600;
+    background-color: transparent;
+    
+    justify-self: center;
+    display: block;
+}
+
+button:hover, button:active {
+    color: white;
+    background-color: #454372;
+}
+
+@media only screen and (min-width: 700px) {
+    .container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .form-container {
+        height: 100vh;
+    }
+
+    .hero {
+        width: clamp(40%, 45%, 60%);
+        height: 100vh;
+    }
+
+    .cta p::after {
+        content: ' \2192';
+        display: inline;
+        white-space: nowrap;
+    
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    h2 {
+        margin-top: 20px;
+    }
+
+    button {
+        margin-top: 1.5rem;
+    }
+
+    p {
+        margin-top: 0.5rem;
+    }
+}
